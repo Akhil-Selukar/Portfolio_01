@@ -71,9 +71,24 @@ header{
   justify-content: space-between;
   z-index: 1000;
   flex-flow: column;
-  padding: 8rem 2rem;
+  padding: 2rem 2rem;
   width: 30rem;
   text-align: center;
+}
+
+header .profile-pic{
+  display: inline-block;
+  padding: .5rem;
+  background: #fff;
+  margin: auto;
+  border-radius: 50%
+}
+
+header .profile-pic img{
+  display: block;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
 }
 
 header .logo{
