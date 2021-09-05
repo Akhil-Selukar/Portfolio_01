@@ -582,8 +582,18 @@ header .follow a:hover{
   margin-bottom: 1.5rem;
 }
 
+footer{
+  margin-top: 2rem;
+  font-size: 2rem;
+  padding: 2.5rem;
+  text-align: center;
+  color: #666;
+  background: #fff;
+}
 
-
+footer span{
+  color: var(--main-color);
+}
 
 /* media queries */
 @media (max-width:991px) {
