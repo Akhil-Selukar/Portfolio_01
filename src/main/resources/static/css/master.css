@@ -230,11 +230,17 @@ header .follow a:hover{
   padding-bottom: 2rem;
 }
 
-.about .row-1 .image{
-  flex: 1 1 25rem;
+.about .row-1 .leftContent{
+  flex: 1 1 50rem;
 }
 
-.about .row-1 .image img{
+.about .row-1 .leftContent p, ul, li{
+  color: #666;
+  font-size: 1.7rem;
+  padding: .5rem 0;
+}
+
+.about .row-1 .leftContent img{
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -247,10 +253,20 @@ header .follow a:hover{
   flex: 1 1 50rem;
 }
 
-.about .row-1 .content h3{
+.about .row-1 .leftContent h3{
+  color: #333;
+  font-size: 2.5rem;
+}
+
+.about .row-1 .content .box-container .box h3{
+  color: #333;
+  font-size: 2.5rem;
+}
+
+/* .about .row-1 .content h3{
   color: #333;
   font-size: 3.5rem;
-}
+} */
 
 .about .row-1 .content p{
   color: #666;
@@ -266,7 +282,12 @@ header .follow a:hover{
 }
 
 .about .row-1 .content .box-container .box{
-  flex: 1 1 20rem;
+  flex: 1 1 50rem;
+}
+
+.about .row-1 .content .box-container .box #email{
+    color: #666;
+    text-transform: lowercase;
 }
 
 .about .row-1 .content .box-container .box span{
@@ -313,18 +334,26 @@ header .follow a:hover{
 }
 
 .about .row-2 .skills .progress:nth-child(1) .bar span{
-    width: 75%;
-}
-
-.about .row-2 .skills .progress:nth-child(2) .bar span{
     width: 85%;
 }
 
-.about .row-2 .skills .progress:nth-child(3) .bar span{
+.about .row-2 .skills .progress:nth-child(2) .bar span{
     width: 80%;
 }
 
+.about .row-2 .skills .progress:nth-child(3) .bar span{
+    width: 75%;
+}
+
 .about .row-2 .skills .progress:nth-child(4) .bar span{
+    width: 80%;
+}
+
+.about .row-2 .skills .progress:nth-child(5) .bar span{
+    width: 75%;
+}
+
+.about .row-2 .skills .progress:nth-child(6) .bar span{
     width: 70%;
 }
 
@@ -391,6 +420,12 @@ header .follow a:hover{
   padding-top: .5rem;
 }
 
+.service .box-container .box img{
+  height: 15rem;
+  width: 15rem;
+  padding-top: .5rem;
+}
+
 .experience .box-container{
   display: flex;
   flex-wrap: wrap;
@@ -421,6 +456,7 @@ header .follow a:hover{
   padding: 1.5rem;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
   border-radius: .5rem;
+  height: calc(100vh - 100px);
 }
 
 .experience .box-container .box .content span{
@@ -432,13 +468,24 @@ header .follow a:hover{
 }
 
 .experience .box-container .box .content h3{
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   padding: .5rem 0;
   color: #111;
 }
 
+.experience .box-container .box .content h4{
+  font-size: 1.5rem;
+  color: #666;
+}
+
 .experience .box-container .box .content p{
   font-size: 1.5rem;
+  color: #666;
+}
+
+.experience .box-container .box .content p, ul, li{
+  font-size: 1.5rem;
+  padding-left: 1.5rem;
   color: #666;
 }
 
@@ -477,7 +524,7 @@ header .follow a:hover{
   position: absolute;
   bottom: .5rem;
   left: 1rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #333;
   text-transform: uppercase;
 }
@@ -541,6 +588,7 @@ header .follow a:hover{
 
 .contact .icons-container .icons p{
   color: #666;
+  text-transform: lowercase;
   font-size: 1.7rem;
 }
 
@@ -595,7 +643,7 @@ header .follow a:hover{
 .contact .row form .btn{
   margin-top: 0;
   margin-bottom: 1.5rem;
-  margin-left: 35%
+  margin-left: 40%
 }
 
 footer{

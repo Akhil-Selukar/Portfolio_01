@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.myfolio"} )
+@ComponentScan(basePackages = {"com.myfolio"} )
 public class SpringBootWebApplication extends SpringBootServletInitializer {
 	
 	@Override

@@ -14,11 +14,17 @@ public class PfController {
 	private String fName;
 	@Value("${home.lName:test}")
 	private String lName;
+	@Value("${home.designation}")
+	private String designation;
+	@Value("${home.description:text}")
+	private String description;
 	
 	@RequestMapping("/")
 	public String welcome(Map<String, Object> model) {
 		model.put("fName", this.fName);
 		model.put("lName", this.lName);
+		model.put("designation", this.designation);
+		model.put("description", this.description);
 		return "home";
 	}
 }
