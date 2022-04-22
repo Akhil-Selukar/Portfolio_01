@@ -1,4 +1,4 @@
-package com.myfolio.controller;
+package com.myfolio.portfolio.controller;
 
 import java.util.Map;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class PfController {
+public class PortfolioController {
 	
 	// inject via application.properties
 	@Value("${home.fName:test}")
