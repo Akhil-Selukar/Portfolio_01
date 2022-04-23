@@ -27,7 +27,7 @@ public class PersonalInfo {
 	private int age;
 	private String gender;
 	private String langKnown;
-	private long mobileNo;
+	private String mobileNo;
 	private String emailId;
 	private String country;
 	private String currentLocation;
@@ -100,11 +100,11 @@ public class PersonalInfo {
 		this.langKnown = langKnown;
 	}
 
-	public long getMobileNo() {
+	public String getMobileNo() {
 		return mobileNo;
 	}
 
-	public void setMobileNo(long mobileNo) {
+	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
 	}
 

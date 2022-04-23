@@ -1,23 +1,10 @@
-package com.myfolio.portfolio.entity;
+package com.myfolio.portfolio.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-
-@Entity
-public class ProfessionalInfo {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int profId;
+public class ProfessionalInfoHelper {
 	
+	private int personalId;
+	
+	private int profId;
 	private String designation;
 	private String summaryPoints;
 	private String progLanguages;
@@ -25,14 +12,28 @@ public class ProfessionalInfo {
 	private String knownDbs;
 	private String operatingSys;
 	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_proflId")
-	private List<WorkProject> projects = new ArrayList<WorkProject>();
-
-	public ProfessionalInfo() {
+	public ProfessionalInfoHelper() {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public ProfessionalInfoHelper(int profId, String designation, String summaryPoints, String progLanguages,
+			String scriptLanguages, String knownDbs, String operatingSys) {
+		super();
+		this.profId = profId;
+		this.designation = designation;
+		this.summaryPoints = summaryPoints;
+		this.progLanguages = progLanguages;
+		this.scriptLanguages = scriptLanguages;
+		this.knownDbs = knownDbs;
+		this.operatingSys = operatingSys;
+	}
+
+	public int getPersonalId() {
+		return personalId;
+	}
+	public void setPersonalId(int personalId) {
+		this.personalId = personalId;
+	}
 	public int getProfId() {
 		return profId;
 	}
@@ -75,11 +76,5 @@ public class ProfessionalInfo {
 	public void setOperatingSys(String operatingSys) {
 		this.operatingSys = operatingSys;
 	}
-	public List<WorkProject> getProjects() {
-		return projects;
-	}
-	public void setProjects(List<WorkProject> projects) {
-		this.projects = projects;
-	}
-		
+
 }
