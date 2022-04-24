@@ -1,5 +1,9 @@
 package com.myfolio.portfolio.dto;
 
+import java.util.List;
+
+import com.myfolio.portfolio.entity.WorkProject;
+
 public class ProfessionalInfoHelper {
 	
 	private int personalId;
@@ -11,6 +15,8 @@ public class ProfessionalInfoHelper {
 	private String scriptLanguages;
 	private String knownDbs;
 	private String operatingSys;
+	
+	private List<WorkProject> workProjects;
 	
 	public ProfessionalInfoHelper() {
 		// TODO Auto-generated constructor stub
@@ -28,6 +34,18 @@ public class ProfessionalInfoHelper {
 		this.operatingSys = operatingSys;
 	}
 
+	public ProfessionalInfoHelper(int profId, List<WorkProject> workProjects) {
+		super();
+		this.profId = profId;
+		this.workProjects = workProjects;
+	}
+
+	public List<WorkProject> getWorkProjects() {
+		return workProjects;
+	}
+	public void setWorkProjects(List<WorkProject> workProjects) {
+		this.workProjects = workProjects;
+	}
 	public int getPersonalId() {
 		return personalId;
 	}

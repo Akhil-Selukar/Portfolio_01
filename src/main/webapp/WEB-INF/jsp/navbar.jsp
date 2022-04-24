@@ -17,7 +17,7 @@
         <a class="nav-link" href="/pfadmin/professional/1">Professional Details</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/dummy">Professional Projects</a>
+        <a class="nav-link" href="/pfadmin/work/1"">Work Experience</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/dummy">Personal Projects</a>

@@ -25,7 +25,7 @@
 					<form:form action="/pfadmin/professional" modelAttribute="profInfoModel" method="POST">
 						<div class="form-group">
 							<form:input class="form-control" type="number" path="personalId"
-								placeholder="profileId" />
+								placeholder="profileId" readonly="true"/>
 						</div>
 						<div class="form-group">
 							<form:label path="designation">Designation</form:label>

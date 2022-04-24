@@ -1,33 +1,26 @@
-package com.myfolio.portfolio.entity;
+package com.myfolio.portfolio.dto;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
-public class WorkProject {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int projectId;
+public class WorkProjectHelper {
 	
+	private int profId;
+
+	private int projectId;
 	private String duration;
 	private String position;
 	private String organization;
-	
-	@Column(length = 500)
 	private String highlights;
-	@Column(length = 500)
 	private String awards;
-	
-	public WorkProject() {
+
+	public WorkProjectHelper() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public WorkProject(String duration, String position, String organization, String highlights, String awards) {
+
+	public WorkProjectHelper(int projectId, String duration, String position, String organization, String highlights,
+			String awards) {
 		super();
+		this.projectId = projectId;
 		this.duration = duration;
 		this.position = position;
 		this.organization = organization;
@@ -35,6 +28,12 @@ public class WorkProject {
 		this.awards = awards;
 	}
 
+	public int getProfId() {
+		return profId;
+	}
+	public void setProfId(int profId) {
+		this.profId = profId;
+	}
 	public int getProjectId() {
 		return projectId;
 	}

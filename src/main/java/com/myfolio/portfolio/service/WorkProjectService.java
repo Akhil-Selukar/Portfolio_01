@@ -1,5 +1,8 @@
 package com.myfolio.portfolio.service;
 
-public interface WorkProjectService {
+import com.myfolio.portfolio.entity.WorkProject;
 
+public interface WorkProjectService {
+	WorkProject getWorkProjectById(int id);
+	WorkProject saveWorkProject(WorkProject workProject);
 }
