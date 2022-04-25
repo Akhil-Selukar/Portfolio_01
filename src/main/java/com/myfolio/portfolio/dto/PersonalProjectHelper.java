@@ -1,35 +1,35 @@
-package com.myfolio.portfolio.entity;
+package com.myfolio.portfolio.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class PersonalProjectHelper {
 
-@Entity
-public class PersonalProject {
+	private int personalId;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int projectId;
-	
 	private String projectName;
 	private String gitLink;
 	private String documentationLink;
 	private String url;
 	
-	public PersonalProject() {
+	public PersonalProjectHelper() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public PersonalProject(String projectName, String gitLink, String documentationLink, String url) {
+	public PersonalProjectHelper(int projectId, String projectName, String gitLink, String documentationLink,
+			String url) {
 		super();
+		this.projectId = projectId;
 		this.projectName = projectName;
 		this.gitLink = gitLink;
 		this.documentationLink = documentationLink;
 		this.url = url;
 	}
 
-
+	public int getPersonalId() {
+		return personalId;
+	}
+	public void setPersonalId(int personalId) {
+		this.personalId = personalId;
+	}
 	public int getProjectId() {
 		return projectId;
 	}
@@ -60,5 +60,5 @@ public class PersonalProject {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-
+	
 }
