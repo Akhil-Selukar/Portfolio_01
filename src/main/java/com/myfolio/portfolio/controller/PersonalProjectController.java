@@ -93,4 +93,29 @@ public class PersonalProjectController {
 		
 	}
 	
+	@GetMapping("/pfadmin/personalproject/editProject/{projectId}")
+	public String editPersonalProject(@PathVariable("projectId") int id, Model model) {
+		
+		PersonalProject personalProject = personalProjectService.getPersonalProjectById(id);
+		
+		model.addAttribute("personalProject", personalProject);
+		
+		return "editPersonalProjectForm";
+	}
+	
+	@PostMapping("/pfadmin/personalproject/save/{projectId}")
+	public String saveEditedPersonalProject(@PathVariable("projectId") int id, PersonalProject personalProject) {
+		
+		PersonalProject oldPersonalProject = personalProjectService.getPersonalProjectById(id);
+		
+		oldPersonalProject.setProjectName(personalProject.getProjectName());
+		oldPersonalProject.setDocumentationLink(personalProject.getDocumentationLink());
+		oldPersonalProject.setGitLink(personalProject.getGitLink());
+		oldPersonalProject.setUrl(personalProject.getUrl());
+
+		personalProjectService.savePersonalProject(oldPersonalProject);
+		
+		return "redirect:/pfadmin";
+	
+	}
 }

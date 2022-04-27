@@ -69,7 +69,7 @@ public class WorkProjectController {
 		WorkProject workProject = workProjectService.getWorkProjectById(id);
 		model.addAttribute("workProject", workProject);
 	
-		return "EditWorkProjectForm";
+		return "editWorkProjectForm";
 	}
 	
 	@PostMapping("/pfadmin/work/save/{projectId}")

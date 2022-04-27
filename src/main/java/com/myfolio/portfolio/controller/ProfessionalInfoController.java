@@ -20,10 +20,10 @@ import com.myfolio.portfolio.service.ProfessionalInfoService;
 
 @Controller
 public class ProfessionalInfoController {
-	
+
 	@Autowired
 	ProfessionalInfoService professionalInfoService;
-	
+
 	@Autowired
 	PersonalInfoService personalInfoService;
 
@@ -35,38 +35,49 @@ public class ProfessionalInfoController {
 	}
 
 	@PostMapping("/pfadmin/professional")
-	public String addProfessionalInfo(@ModelAttribute("profInfoModel") ProfessionalInfoHelper profInfoHelper, Model model) {
-		System.out.println("====>>>> "+profInfoHelper.getPersonalId());
-		System.out.println("=====>>> "+profInfoHelper.getProgLanguages());
-		
+	public String addProfessionalInfo(@ModelAttribute("profInfoModel") ProfessionalInfoHelper profInfoHelper,
+			Model model) {
+		System.out.println("====>>>> " + profInfoHelper.getPersonalId());
+		System.out.println("=====>>> " + profInfoHelper.getProgLanguages());
+
 		PersonalInfo oldPersonalInfo = personalInfoService.getPersonalInfoById(profInfoHelper.getPersonalId());
-		ProfessionalInfo professionalInfo = new ProfessionalInfo();
-		
-		professionalInfo.setDesignation(profInfoHelper.getDesignation());
-		professionalInfo.setKnownDbs(profInfoHelper.getKnownDbs());
-		professionalInfo.setOperatingSys(profInfoHelper.getOperatingSys());
-		professionalInfo.setProfId(profInfoHelper.getProfId());
-		professionalInfo.setProgLanguages(profInfoHelper.getProgLanguages());
-		professionalInfo.setScriptLanguages(profInfoHelper.getScriptLanguages());
-		professionalInfo.setSummaryPoints(profInfoHelper.getSummaryPoints());
-		
-		oldPersonalInfo.setProfessionalInfo(professionalInfo);
-		
+		if (oldPersonalInfo.getProfessionalInfo() != null) {
+			ProfessionalInfo professionalInfo = oldPersonalInfo.getProfessionalInfo();
+
+			professionalInfo.setDesignation(profInfoHelper.getDesignation());
+			professionalInfo.setKnownDbs(profInfoHelper.getKnownDbs());
+			professionalInfo.setOperatingSys(profInfoHelper.getOperatingSys());
+			professionalInfo.setProgLanguages(profInfoHelper.getProgLanguages());
+			professionalInfo.setScriptLanguages(profInfoHelper.getScriptLanguages());
+			professionalInfo.setSummaryPoints(profInfoHelper.getSummaryPoints());
+			oldPersonalInfo.setProfessionalInfo(professionalInfo);
+		} else {
+			ProfessionalInfo professionalInfo = new ProfessionalInfo();
+
+			professionalInfo.setDesignation(profInfoHelper.getDesignation());
+			professionalInfo.setKnownDbs(profInfoHelper.getKnownDbs());
+			professionalInfo.setOperatingSys(profInfoHelper.getOperatingSys());
+			professionalInfo.setProfId(profInfoHelper.getProfId());
+			professionalInfo.setProgLanguages(profInfoHelper.getProgLanguages());
+			professionalInfo.setScriptLanguages(profInfoHelper.getScriptLanguages());
+			professionalInfo.setSummaryPoints(profInfoHelper.getSummaryPoints());
+			oldPersonalInfo.setProfessionalInfo(professionalInfo);
+		}
 		personalInfoService.savePersonalInfo(oldPersonalInfo);
-		
+
 		return "redirect:/pfadmin";
 	}
-	
+
 	@GetMapping("/pfadmin/work/{profId}")
 	public String getWorkExDetails(@PathVariable("profId") int profId, Model model) {
-		
+
 		ProfessionalInfo professionalInfo = professionalInfoService.getProfessionalInfoById(profId);
-		
+
 		List<WorkProject> workProjects = new ArrayList<WorkProject>();
-		
-		if(professionalInfo.getProjects() != null) {
-			for(WorkProject wProject : professionalInfo.getProjects()) {
-				WorkProject tmpWorkProject  = new WorkProject();
+
+		if (professionalInfo.getProjects() != null) {
+			for (WorkProject wProject : professionalInfo.getProjects()) {
+				WorkProject tmpWorkProject = new WorkProject();
 //				wph.setProfId(professionalInfo.getProfId());
 				tmpWorkProject.setDuration(wProject.getDuration());
 				tmpWorkProject.setPosition(wProject.getPosition());
@@ -74,18 +85,18 @@ public class ProfessionalInfoController {
 				tmpWorkProject.setHighlights(wProject.getHighlights());
 				tmpWorkProject.setAwards(wProject.getAwards());
 				tmpWorkProject.setProjectId(wProject.getProjectId());
-				
+
 				workProjects.add(tmpWorkProject);
 			}
-		}else {
-			WorkProject tmpWorkProject  = new WorkProject();
+		} else {
+			WorkProject tmpWorkProject = new WorkProject();
 			workProjects.add(tmpWorkProject);
 		}
-		
+
 		ProfessionalInfoHelper profInfoHelper = new ProfessionalInfoHelper(professionalInfo.getProfId(), workProjects);
-		
+
 		model.addAttribute("profInfoHelper", profInfoHelper);
-		
+
 		return "workProjects";
 	}
 }
