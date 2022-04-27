@@ -1,34 +1,36 @@
-package com.myfolio.portfolio.entity;
+package com.myfolio.portfolio.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class CertificateHelper {
 
-@Entity
-public class Certificate {
+	private int personalId;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int certificateId;
-	
 	private String examCode;
 	private String certificateName;
 	private String certificateProvider;
 	private String certificateLink;
 	
-	public Certificate() {
+	public CertificateHelper() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Certificate(String examCode, String certificateName, String certificateProvider, String certificateLink) {
+	public CertificateHelper(int personalId, int certificateId, String examCode, String certificateName,
+			String certificateProvider, String certificateLink) {
 		super();
+		this.personalId = personalId;
+		this.certificateId = certificateId;
 		this.examCode = examCode;
 		this.certificateName = certificateName;
 		this.certificateProvider = certificateProvider;
 		this.certificateLink = certificateLink;
 	}
 
+	public int getPersonalId() {
+		return personalId;
+	}
+	public void setPersonalId(int personalId) {
+		this.personalId = personalId;
+	}
 	public int getCertificateId() {
 		return certificateId;
 	}
@@ -59,6 +61,5 @@ public class Certificate {
 	public void setCertificateLink(String certificateLink) {
 		this.certificateLink = certificateLink;
 	}
-	
 	
 }

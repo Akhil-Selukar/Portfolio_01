@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Personal Projects</title>
+<title>Certificates</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -20,38 +20,38 @@
 		<div class="row">
 			<div
 				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-				<h1 class="text-center">Personal Projects Details</h1>
+				<h1 class="text-center">Certificatio Details</h1>
 				<div class="card-body">
 
-					<c:forEach items="${personalInfoHelper.personalProjects}" var="personalProject">
+					<c:forEach items="${personalInfoHelper.certificates}" var="certificate">
 						<%-- <div class="form-group">
 							<form:input class="form-control" type="number"
 								path="${profInfoHelper.profId}" placeholder="profileId"
 								readonly="true" />
 						</div> --%>
 						<div class="form-group">
-							Project Name :
-							<c:out value="${personalProject.projectName}" />
+							Certificate Name :
+							<c:out value="${certificate.certificateName}" />
 						</div>
 						<div class="form-group">
-							GitHub Link :
-							<c:out value="${personalProject.gitLink}" />
+							Exam Code :
+							<c:out value="${certificate.examCode}" />
 						</div>
 						<div class="form-group">
-							Documentation Link :
-							<c:out value="${personalProject.documentationLink}" />
+							Certificate Provider :
+							<c:out value="${certificate.certificateProvider}" />
 						</div>
 						<div class="form-group">
-							Project URL :
-							<c:out value="${personalProject.url}" />
+							Certificate/Badge Link :
+							<c:out value="${certificate.certificateLink}" />
 						</div>
-						<a href="/pfadmin/personalproject/editProject/${personalProject.projectId}"
+						<a href="/pfadmin/certificate/edit/${certificate.certificateId}"
 							class="btn btn-primary">Edit Details</a>
 						<br>
 						<hr>
 					</c:forEach>
-					<br> <a href="/pfadmin/personalproject/addproject/${personalInfoHelper.personalId}"
-						class="btn btn-primary">Add Project</a>
+					<br> <a href="/pfadmin/certificate/addcertificate/${personalInfoHelper.personalId}"
+						class="btn btn-primary">Add Certificate</a>
 
 				</div>
 			</div>

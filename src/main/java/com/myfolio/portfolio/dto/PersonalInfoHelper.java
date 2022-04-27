@@ -32,6 +32,12 @@ public class PersonalInfoHelper {
 		this.personalProjects = personalProjects;
 	}
 
+	public PersonalInfoHelper(List<Certificate> certificates, int personalId) {
+		super();
+		this.personalId = personalId;
+		this.certificates = certificates;
+	}
+
 	public int getPersonalId() {
 		return personalId;
 	}

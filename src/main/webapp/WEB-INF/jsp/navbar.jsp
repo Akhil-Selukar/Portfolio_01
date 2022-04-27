@@ -23,7 +23,7 @@
         <a class="nav-link" href="/pfadmin/personalproject/1">Personal Projects</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/dummy">Certifications</a>
+        <a class="nav-link" href="/pfadmin/certificate/1">Certifications</a>
       </li>
     </ul>
   </div>

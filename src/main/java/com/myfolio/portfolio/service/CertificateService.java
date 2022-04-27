@@ -1,5 +1,9 @@
 package com.myfolio.portfolio.service;
 
-public interface CertificateService {
+import com.myfolio.portfolio.entity.Certificate;
 
+public interface CertificateService {
+	
+	Certificate getCertificateById(int id);
+	Certificate saveCertificate(Certificate certiicate);
 }
