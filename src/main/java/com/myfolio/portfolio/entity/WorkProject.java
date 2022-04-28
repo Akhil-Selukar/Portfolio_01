@@ -17,9 +17,9 @@ public class WorkProject {
 	private String position;
 	private String organization;
 	
-	@Column(length = 500)
+	@Column(length = 1000)
 	private String highlights;
-	@Column(length = 500)
+	@Column(length = 1000)
 	private String awards;
 	
 	public WorkProject() {
