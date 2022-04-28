@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,10 +20,12 @@ public class ProfessionalInfo {
 	private int profId;
 	
 	private String designation;
+	@Column(length = 1000)
 	private String summaryPoints;
 	private String progLanguages;
 	private String scriptLanguages;
 	private String knownDbs;
+	private String toolsUsed;
 	private String operatingSys;
 	
 	@OneToMany(cascade = CascadeType.ALL)
@@ -80,6 +83,12 @@ public class ProfessionalInfo {
 	}
 	public void setProjects(List<WorkProject> projects) {
 		this.projects = projects;
+	}
+	public String getToolsUsed() {
+		return toolsUsed;
+	}
+	public void setToolsUsed(String toolsUsed) {
+		this.toolsUsed = toolsUsed;
 	}
 		
 }

@@ -14,6 +14,7 @@ public class ProfessionalInfoHelper {
 	private String progLanguages;
 	private String scriptLanguages;
 	private String knownDbs;
+	private String toolsUsed;
 	private String operatingSys;
 	
 	private List<WorkProject> workProjects;
@@ -23,7 +24,8 @@ public class ProfessionalInfoHelper {
 	}
 	
 	public ProfessionalInfoHelper(int profId, String designation, String summaryPoints, String progLanguages,
-			String scriptLanguages, String knownDbs, String operatingSys) {
+			String scriptLanguages, String knownDbs, String toolsUsed, String operatingSys,
+			List<WorkProject> workProjects) {
 		super();
 		this.profId = profId;
 		this.designation = designation;
@@ -31,7 +33,9 @@ public class ProfessionalInfoHelper {
 		this.progLanguages = progLanguages;
 		this.scriptLanguages = scriptLanguages;
 		this.knownDbs = knownDbs;
+		this.toolsUsed = toolsUsed;
 		this.operatingSys = operatingSys;
+		this.workProjects = workProjects;
 	}
 
 	public ProfessionalInfoHelper(int profId, List<WorkProject> workProjects) {
@@ -93,6 +97,12 @@ public class ProfessionalInfoHelper {
 	}
 	public void setOperatingSys(String operatingSys) {
 		this.operatingSys = operatingSys;
+	}
+	public String getToolsUsed() {
+		return toolsUsed;
+	}
+	public void setToolsUsed(String toolsUsed) {
+		this.toolsUsed = toolsUsed;
 	}
 
 }

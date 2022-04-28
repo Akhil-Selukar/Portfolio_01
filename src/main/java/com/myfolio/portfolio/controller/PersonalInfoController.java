@@ -110,6 +110,7 @@ public class PersonalInfoController {
 			professionalinfoHelper.setProgLanguages(perInfo.getProfessionalInfo().getProgLanguages());
 			professionalinfoHelper.setScriptLanguages(perInfo.getProfessionalInfo().getScriptLanguages());
 			professionalinfoHelper.setSummaryPoints(perInfo.getProfessionalInfo().getSummaryPoints());
+			professionalinfoHelper.setToolsUsed(perInfo.getProfessionalInfo().getToolsUsed());
 		}
 		
 		

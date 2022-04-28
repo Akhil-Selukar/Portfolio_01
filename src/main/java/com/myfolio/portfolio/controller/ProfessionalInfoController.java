@@ -50,6 +50,8 @@ public class ProfessionalInfoController {
 			professionalInfo.setProgLanguages(profInfoHelper.getProgLanguages());
 			professionalInfo.setScriptLanguages(profInfoHelper.getScriptLanguages());
 			professionalInfo.setSummaryPoints(profInfoHelper.getSummaryPoints());
+			professionalInfo.setToolsUsed(profInfoHelper.getToolsUsed());
+			
 			oldPersonalInfo.setProfessionalInfo(professionalInfo);
 		} else {
 			ProfessionalInfo professionalInfo = new ProfessionalInfo();
@@ -61,6 +63,8 @@ public class ProfessionalInfoController {
 			professionalInfo.setProgLanguages(profInfoHelper.getProgLanguages());
 			professionalInfo.setScriptLanguages(profInfoHelper.getScriptLanguages());
 			professionalInfo.setSummaryPoints(profInfoHelper.getSummaryPoints());
+			professionalInfo.setToolsUsed(profInfoHelper.getToolsUsed());
+			
 			oldPersonalInfo.setProfessionalInfo(professionalInfo);
 		}
 		personalInfoService.savePersonalInfo(oldPersonalInfo);
