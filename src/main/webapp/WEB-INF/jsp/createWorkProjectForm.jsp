@@ -45,12 +45,12 @@
 						</div>
 						<div class="form-group">
 							<form:label path="highlights">Highlights</form:label>
-							<form:input class="form-control" type="text" path="highlights"
+							<form:textarea class="form-control" type="text" path="highlights" rows="6"
 								placeholder="Enter # Separated List Of Your Work Highlights" />
 						</div>
 						<div class="form-group">
 							<form:label path="awards">Awards and Recognition</form:label>
-							<form:input class="form-control" type="text" path="awards"
+							<form:textarea class="form-control" type="text" path="awards" rows="6"
 								placeholder="Enter # Separated List Of Your Achievements" />
 						</div>
 				</div>
