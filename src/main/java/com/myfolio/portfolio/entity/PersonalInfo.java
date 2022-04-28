@@ -42,11 +42,11 @@ public class PersonalInfo {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_personalId")
-	private List<Certificate> certificates = new ArrayList<Certificate>();
+	private List<Certificate> certificates;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_personalId")
-	private List<PersonalProject> personalProjects = new ArrayList<PersonalProject>();
+	private List<PersonalProject> personalProjects;
 
 	public PersonalInfo() {
 		// TODO Auto-generated constructor stub

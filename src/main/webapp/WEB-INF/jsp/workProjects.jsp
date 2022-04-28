@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="com.myfolio.portfolio.entity.WorkProject"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -24,11 +27,29 @@
 				<div class="card-body">
 
 					<c:forEach items="${profInfoHelper.workProjects}" var="wProject">
-						<%-- <div class="form-group">
-							<form:input class="form-control" type="number"
-								path="${profInfoHelper.profId}" placeholder="profileId"
-								readonly="true" />
-						</div> --%>
+					
+					<%
+							WorkProject wp = (WorkProject) pageContext.getAttribute("wProject");
+							String[] hlts = wp.getHighlights().split("#");
+
+							List<String> highlt = new ArrayList<String>();
+
+							for (String hlt : hlts) {
+								highlt.add(hlt);
+							}
+
+							String[] awards = wp.getAwards().split("#");
+
+							List<String> awardsList = new ArrayList<String>();
+
+							for (String awd : awards) {
+								awardsList.add(awd);
+							}
+
+							request.setAttribute("highLightList", highlt);
+							request.setAttribute("awardsList", awardsList);
+					%>
+
 						<div class="form-group">
 							Project Duration :
 							<c:out value="${wProject.duration}" />
@@ -42,13 +63,28 @@
 							<c:out value="${wProject.organization}" />
 						</div>
 						<div class="form-group">
-							Highlights (# separated list) :
-							<c:out value="${wProject.highlights}" />
+							Highlights :
+							<c:forEach items="${highLightList}" var="list">
+								<c:if test="${not empty list}">
+									<ul>
+										<li><c:out value="${list}" /></li>
+									</ul>
+								</c:if>
+							</c:forEach>
 						</div>
+
 						<div class="form-group">
 							Awards :
-							<c:out value="${wProject.awards}" />
+							<c:forEach items="${awardsList}" var="award">
+								<c:if test="${not empty award}">
+									<ul>
+										<li><c:out value="${award}" /></li>
+									</ul>
+								</c:if>
+							</c:forEach>
+
 						</div>
+
 						<a href="/pfadmin/work/editProject/${wProject.projectId}"
 							class="btn btn-primary">Edit Details</a>
 						<br>
