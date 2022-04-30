@@ -30,7 +30,7 @@ public class ProfessionalInfo {
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_proflId")
-	private List<WorkProject> projects = new ArrayList<WorkProject>();
+	private List<WorkProject> projects;
 
 	public ProfessionalInfo() {
 		// TODO Auto-generated constructor stub
