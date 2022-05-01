@@ -19,7 +19,7 @@
 			</div>
 			<h2>Page not found</h2>
 			<p>You are seeing this page because no profile is created, try creating a profile from home page.</p>
-			<a href="/pfadmin">home page</a>
+			<a href="/pfadmin/home">home page</a>
 		</div>
 	</div>
 

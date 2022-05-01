@@ -26,7 +26,7 @@ public class EmailServiceImpl implements EmailService {
 		
 		message.setTo(toMail);
 		message.setSubject(name + " Want to contact you.");
-		message.setText(body);
+		message.setText(body+"\nEmail : "+eMail+"\nContact No : "+phoneNo);
 		
 
 		acknowledgement.setTo(eMail);

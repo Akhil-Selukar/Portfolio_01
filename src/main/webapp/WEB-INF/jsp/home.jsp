@@ -291,16 +291,7 @@
 				System.out.println("===>>> 2222 ===**** " + mailSendingHelper.getTo());
 			%>
 			
-			<%-- <form:form action="/pfadmin/mail/sendmail" modelAttribute="${mailSendingHelper}" method="POST">
-				<form:input class="form-control" type="text" path="name" placeholder="Your Name" />
-				<form:input class="form-control" type="email" path="eMail" placeholder="Your Email Id" />
-				<form:input class="form-control" type="text" path="phoneNo" placeholder="Your Contact No" />
-				<form:input class="form-control" type="text" path="message" placeholder="Your Message" />
-				
-				<input type="submit" class="btn" value="Send message">
-			</form:form> --%>
-			
-			<form action="/pfadmin/mail/sendmail" method="GET">
+			<form action="/mail/sendmail" method="GET">
 				<input name="name" type="text" placeholder="name" class="box"> 
 				<input name="eMail" type="text" placeholder="email id" class="box">
 				<input name="phoneNo" type="number" placeholder="Mobile number" class="box">

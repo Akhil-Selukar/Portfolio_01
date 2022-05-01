@@ -24,7 +24,7 @@ public class PersonalInfoController {
 	}
 
 	//Get the person in admin page.
-	@GetMapping("/pfadmin")
+	@GetMapping("/pfadmin/home")
 	public String getPersonalInfo(Model model) {
 		model.addAttribute("person", personalInfoService.getPersonalInfo());
 		
@@ -45,7 +45,7 @@ public class PersonalInfoController {
 	public String savePersonalInfo(PersonalInfo personalInfo) {
 		personalInfoService.savePersonalInfo(personalInfo);
 		
-		return "redirect:/pfadmin";
+		return "redirect:/pfadmin/home";
 	}
 	
 	//Get profile by id
@@ -76,7 +76,7 @@ public class PersonalInfoController {
 		
 		personalInfoService.savePersonalInfo(oldPersonalInfo);
 		
-		return "redirect:/pfadmin";
+		return "redirect:/pfadmin/home";
 	}
 	
 	//Delete personalInfo/profile
@@ -84,7 +84,7 @@ public class PersonalInfoController {
 	public String deletePersonalInfoById(@PathVariable("personalId") int id) {
 		personalInfoService.deletePersonalInfoById(id);
 		
-		return "redirect:/pfadmin";
+		return "redirect:/pfadmin/home";
 	}
 	
 	//add blank object of ProfessionalInfo

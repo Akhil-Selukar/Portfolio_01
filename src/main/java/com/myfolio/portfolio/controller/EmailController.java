@@ -23,7 +23,7 @@ public class EmailController {
 		this.personalInfoService = personalInfoService;
 	}
 
-	@GetMapping("/pfadmin/mail/sendmail")
+	@GetMapping("/mail/sendmail")
 	public String emailSending(MailSendingHelper mailSendingHelper) {
 		
 		emailService.sendEmail(personalInfoService.getPersonalInfoById(1).getEmailId(), mailSendingHelper.getName(), mailSendingHelper.geteMail(),

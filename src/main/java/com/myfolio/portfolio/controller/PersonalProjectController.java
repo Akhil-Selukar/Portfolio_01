@@ -89,7 +89,7 @@ public class PersonalProjectController {
 		
 		personalInfoService.savePersonalInfo(oldPersonalInfo);
 		
-		return "redirect:/pfadmin";
+		return "redirect:/pfadmin/home";
 		
 	}
 	
@@ -115,7 +115,7 @@ public class PersonalProjectController {
 
 		personalProjectService.savePersonalProject(oldPersonalProject);
 		
-		return "redirect:/pfadmin";
+		return "redirect:/pfadmin/home";
 	
 	}
 }

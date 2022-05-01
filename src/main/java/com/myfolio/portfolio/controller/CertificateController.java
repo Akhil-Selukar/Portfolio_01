@@ -94,7 +94,7 @@ public class CertificateController {
 		oldPersonalInfo.setCertificates(certificates);
 		personalInfoService.savePersonalInfo(oldPersonalInfo);
 
-		return "redirect:/pfadmin";
+		return "redirect:/pfadmin/home";
 	}
 	
 	@GetMapping("/pfadmin/certificate/edit/{certificateId}")
@@ -119,7 +119,7 @@ public class CertificateController {
 		
 		certificateService.saveCertificate(oldCertificate);
 		
-		return "redirect:/pfadmin";
+		return "redirect:/pfadmin/home";
 		
 	}
 }

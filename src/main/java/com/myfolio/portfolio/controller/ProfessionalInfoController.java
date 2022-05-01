@@ -69,7 +69,7 @@ public class ProfessionalInfoController {
 		}
 		personalInfoService.savePersonalInfo(oldPersonalInfo);
 
-		return "redirect:/pfadmin";
+		return "redirect:/pfadmin/home";
 	}
 
 	@GetMapping("/pfadmin/work/{profId}")

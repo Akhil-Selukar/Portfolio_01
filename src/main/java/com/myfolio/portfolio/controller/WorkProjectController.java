@@ -60,7 +60,7 @@ public class WorkProjectController {
 		
 		professionalInfoService.saveProfessionalInfo(oldProfessionalinfo);
 		
-		return "redirect:/pfadmin";
+		return "redirect:/pfadmin/home";
 	}
 	
 	@GetMapping("/pfadmin/work/editProject/{projectId}")
@@ -84,7 +84,7 @@ public class WorkProjectController {
 		
 		workProjectService.saveWorkProject(oldWorkProject);
 		
-		return "redirect:/pfadmin";
+		return "redirect:/pfadmin/home";
 		
 	}
 }
