@@ -28,7 +28,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 			.antMatchers("/").permitAll()
 			.antMatchers("/pfadmin").hasRole("ADMIN")
+			.antMatchers("/pfadmin/**").authenticated()
 			.and().formLogin().defaultSuccessUrl("/pfadmin/home", true);
+		
 	}
 	
 	
